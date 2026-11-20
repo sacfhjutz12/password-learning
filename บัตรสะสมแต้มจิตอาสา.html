@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บัตรสะสมแต้มและลงชื่อจิตอาสา - สถานพินิจและคุ้มครองเด็กและเยาวชนจังหวัดกำแพงเพชร</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Sarabun", sans-serif;
+  background: radial-gradient(circle at top, #e7f2ff 0%, #f5f9ff 58%, #edf5fc 100%);
+  color: #183656;
+}
+
+header {
+  background: linear-gradient(125deg, #133b6e 0%, #2463b3 55%, #3b93eb 100%);
+  padding: 24px 16px;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(19, 59, 110, 0.2);
+  border-bottom: 4px solid #f7c948;
+}
+
+.header-inner {
+  max-width: 1060px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.agency-logo {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 3px;
+  border: 3px solid #f7d046;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.header-text h1 { margin: 0 0 4px; font-size: 22px; }
+.header-text p { margin: 0 0 8px; font-size: 14px; opacity: .96; }
+
+.header-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pill-gold {
+  background: linear-gradient(90deg, #fff3c4, #ffe07d);
+  color: #784900;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.pill-mint {
+  background: #e3f9ec;
+  color: #0f6b3a;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.container { max-width: 1060px; margin: auto; padding: 20px 14px 52px; }
+
+.card {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 20px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 20px rgba(32, 86, 148, 0.08);
+  border: 1px solid #dfeefb;
+}
+
+h2 { margin: 0 0 14px; font-size: 19px; color: #164278; }
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  align-items: center;
+}
+
+.sample-box {
+  text-align: center;
+  background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
+  border: 1px dashed #9ec5ea;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.sample-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  display: block;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(22, 66, 120, 0.1);
+}
+
+.rules-box {
+  background: linear-gradient(180deg, #f6faff 0%, #eef6ff 100%);
+  border-left: 4px solid #2b7de9;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.rules-box h3 { margin: 0 0 8px; font-size: 15px; color: #164278; }
+.rules-box ul { margin: 0; padding-left: 18px; }
+.rules-box li { margin-bottom: 6px; }
+
+label { font-size: 14px; font-weight: bold; color: #2b4c73; display: block; }
+input, select, button {
+  padding: 11px 14px;
+  border-radius: 11px;
+  border: 1px solid #d4e2f1;
+  font-size: 15px;
+}
+input, select {
+  width: 100%;
+  margin: 6px 0 12px;
+  background: #fbfdff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus {
+  outline: none;
+  border-color: #2b7de9;
+  box-shadow: 0 0 0 3px rgba(43, 125, 233, 0.14);
+}
+button {
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #256ec9, #3c8ef0);
+  color: #fff;
+  font-weight: bold;
+  margin: 3px 2px;
+  box-shadow: 0 3px 10px rgba(37, 110, 201, 0.2);
+}
+button:hover { filter: brightness(1.04); }
+button:active { transform: scale(0.98); }
+button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.btn-stamp { background: linear-gradient(135deg, #168a54, #22b370); box-shadow: 0 4px 12px rgba(22, 138, 84, 0.25); }
+.btn-mini-stamp { background: linear-gradient(135deg, #168a54, #22b370); padding: 8px 12px; font-size: 13px; }
+.btn-redeem { background: linear-gradient(135deg, #0b8494, #17a8bd); padding: 8px 12px; font-size: 13px; }
+.btn-delete { background: linear-gradient(135deg, #d95353, #eb7171); padding: 8px 12px; font-size: 13px; }
+.btn-export { background: linear-gradient(135deg, #2b9467, #41b583); }
+.btn-sync { background: linear-gradient(135deg, #4b6cb7, #6685d4); }
+.btn-line { background: linear-gradient(135deg, #04b34c, #17d164); box-shadow: 0 4px 12px rgba(4, 179, 76, 0.24); }
+
+.sync-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background: #f2f8ff;
+  border: 1px solid #d4e6f8;
+  border-radius: 14px;
+  padding: 11px 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.quick-stamp-box {
+  background: linear-gradient(180deg, #f3fcf7 0%, #e9f8f0 100%);
+  border: 1px solid #9ad9b9;
+  border-radius: 16px;
+  padding: 16px;
+}
+.quick-stamp-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1.3fr 0.7fr;
+  gap: 10px;
+}
+.stamp-banner {
+  margin-top: 12px;
+  background: #dff5e9;
+  border-left: 4px solid #168a54;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #114b30;
+  font-weight: bold;
+}
+
+.monthly-box {
+  background: linear-gradient(125deg, #fff8dc 0%, #eef6ff 100%);
+  border: 1px solid #f0cb69;
+  border-radius: 16px;
+  padding: 15px 16px;
+  margin-bottom: 14px;
+}
+.monthly-badge {
+  display: inline-block;
+  background: #d97706;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+.monthly-title { font-size: 18px; font-weight: bold; color: #153e73; }
+.monthly-sub { font-size: 13px; color: #4c6b8b; margin-top: 4px; }
+
+.summary-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rank-list { display: grid; gap: 9px; }
+.rank-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: #f8fbff;
+  border: 1px solid #e0edf9;
+  border-radius: 14px;
+  padding: 11px 14px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+.rank-badge {
+  background: #1b4b85;
+  color: #fff;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.rank-item.rank-1 .rank-badge { background: #e09b00; }
+.rank-item.rank-2 .rank-badge { background: #647b94; }
+.rank-item.rank-3 .rank-badge { background: #b56d2c; }
+
+.title-tag {
+  display: inline-block;
+  background: #e8f1fc;
+  color: #1b4b85;
+  border: 1px solid #bdd6f5;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 6px;
+}
+.title-tag.hero {
+  background: #fff1cc;
+  color: #8c5300;
+  border-color: #f3c869;
+}
+.title-tag.pro {
+  background: #e3f9ec;
+  color: #0f6b3a;
+  border-color: #88d8ab;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.badge {
+  background: #e6f2ff;
+  color: #164278;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.toolbar input { margin: 0; }
+.export-group { display: flex; gap: 8px; flex-wrap: wrap; }
+.export-group select { width: auto; min-width: 195px; margin: 0; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+  gap: 14px;
+}
+.volunteer-stamp-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f5faff 100%);
+  border: 1px solid #cde2f7;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 4px 14px rgba(22, 66, 120, 0.06);
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.card-name { font-size: 17px; font-weight: bold; color: #164278; }
+.card-meta { font-size: 12px; color: #587594; margin-top: 2px; }
+.pts-pill {
+  background: #fff4d1;
+  color: #945d00;
+  border: 1px solid #f0ca6c;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.progress-wrap {
+  margin: 10px 0 6px;
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: bold;
+  color: #1f4b7a;
+  margin-bottom: 5px;
+}
+.progress-track {
+  width: 100%;
+  height: 11px;
+  background: #e3eef9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2b7de9, #168a54);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.drink-status {
+  background: #f2fbf7;
+  border: 1px solid #bce7d0;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: #125233;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.slots-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin: 10px 0;
+}
+.stamp-slot {
+  height: 34px;
+  border-radius: 10px;
+  border: 1.5px dashed #9cc3e8;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #6785a6;
+}
+.stamp-slot.stamped {
+  border: 1.5px solid #168a54;
+  background: #e3f7ec;
+  color: #114b30;
+}
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+.empty { text-align: center; color: #7c92a8; padding: 20px 10px; }
+.hidden { display: none; }
+
+@media (max-width: 768px) {
+  .quick-stamp-grid, .toolbar { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <img src="logo.jpg" alt="ตราสัญลักษณ์กรมพินิจฯ" class="agency-logo" onerror="this.style.display='none'">
+    <div class="header-text">
+      <h1>บัตรสะสมแต้มและลงชื่อกิจกรรมจิตอาสา</h1>
+      <p>สถานพินิจและคุ้มครองเด็กและเยาวชนจังหวัดกำแพงเพชร</p>
+      <div class="header-pills">
+        <span class="pill-mint">🥤 ครบ 10 แต้ม รับน้ำฟรี 1 แก้ว</span>
+        <span class="pill-gold">♾️ ปั๊มแต้มได้ไม่จำกัด</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="sync-bar">
+    <div id="syncStatusText">โหมดปัจจุบัน: <strong>บันทึกในเครื่องนี้</strong></div>
+    <div>
+      <button type="button" class="btn-sync" onclick="window.volunteerApp.configureSheetUrl()">ตั้งค่า Google Sheets</button>
+      <button type="button" onclick="window.volunteerApp.syncFromSheet()">รีเฟรชข้อมูล</button>
+    </div>
+  </div>
+
+  <!-- รูปตัวอย่างบัตรและเงื่อนไข วางไว้ด้านบนก่อนส่วนกรอกชื่อ -->
+  <div class="card">
+    <h2>🎫 ตัวอย่างบัตรสะสมคะแนนและเงื่อนไขการใช้บัตร</h2>
+    <div class="showcase-grid">
+      <div class="sample-box">
+        <img
+          src="S__47505422.jpg"
+          alt="ตัวอย่างบัตรสะสมคะแนน กิจกรรมจิตอาสา"
+          class="sample-img"
+          onerror="this.onerror=null; this.src='card-sample.png'; this.onerror=function(){this.outerHTML='<div style=\'padding:16px;color:#5a789a;\'>วางไฟล์รูปตัวอย่างบัตรชื่อ <strong>S__47505422.jpg</strong> ในโฟลเดอร์เดียวกับไฟล์นี้</div>';};"
+        >
+        <div style="font-size:12px; color:#5a789a; margin-top:8px;">
+          ตัวอย่างบัตรสะสมคะแนน กิจกรรมจิตอาสา 10 ช่อง บน LINE Official Account
+        </div>
+      </div>
+
+      <div class="rules-box">
+        <h3>📌 เงื่อนไขการใช้บัตรสะสมแต้ม</h3>
+        <ul>
+          <li>รับแต้มทุกครั้งที่ทำกิจกรรมจิตอาสาของสถานพินิจและคุ้มครองเด็กและเยาวชนจังหวัดกำแพงเพชร (ปั๊มได้ไม่จำกัด)</li>
+          <li>สะสมครบทุก 10 แต้ม รับสิทธิ์ <strong>น้ำฟรี 1 แก้ว</strong> และกดบันทึกการแลกได้บนบัตรแต่ละใบ</li>
+          <li>ผู้ได้แต้มสูงสุดประจำเดือนรับรางวัลพิเศษ/เกียรติบัตร พร้อมประกาศผลสรุปผ่าน LINE OA</li>
+          <li>หากพบว่ามีการใช้บัตรสะสมแต้มอย่างไม่ถูกต้อง แต้มหรือสิทธิ์รับของรางวัลจะถือเป็นโมฆะ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ใส่ชื่อแล้วปั๊มแต้มได้ทันที -->
+  <div class="card">
+    <h2>⚡ ใส่ชื่อแล้วปั๊มแต้มได้ทันที (ไม่จำกัด)</h2>
+    <div class="quick-stamp-box">
+      <div class="quick-stamp-grid">
+        <div>
+          <label for="quickNameInput">ชื่อ-นามสกุล (พิมพ์ใหม่หรือเลือกจากรายชื่อ)</label>
+          <input id="quickNameInput" list="existingNamesList" placeholder="พิมพ์ชื่อ-นามสกุล แล้วกดปั๊มแต้มทันที">
+          <datalist id="existingNamesList"></datalist>
+        </div>
+        <div>
+          <label for="quickActivityInput">ชื่อกิจกรรม</label>
+          <input id="quickActivityInput" placeholder="เช่น จิตอาสาพัฒนาพื้นที่">
+        </div>
+        <div>
+          <label for="quickPointsInput">จำนวนแต้มที่ปั๊ม</label>
+          <input id="quickPointsInput" type="number" min="1" step="1" value="1">
+        </div>
+      </div>
+
+      <label for="quickNoteInput">สังกัด / เบอร์โทร / หมายเหตุ (ถ้ามี)</label>
+      <input id="quickNoteInput" placeholder="เช่น กลุ่มงาน... / เยาวชน / 08x-xxx-xxxx">
+
+      <button type="button" id="btnQuickStamp" class="btn-stamp" onclick="window.volunteerApp.handleQuickStamp()">🎫 ปั๊มแต้มลงบัตรทันที</button>
+      <div id="stampBanner" class="stamp-banner hidden"></div>
+    </div>
+  </div>
+
+  <!-- สรุปผลผู้ทำกิจกรรมและได้แต้มสูงสุด + รางวัลพิเศษประจำเดือนคู่กับ LINE OA -->
+  <div class="card">
+    <div class="summary-header">
+      <h2 style="margin:0;">🏆 สรุปผลผู้ทำกิจกรรมและรางวัลพิเศษประจำเดือน (ส่งต่อ LINE OA)</h2>
+      <button type="button" class="btn-line" onclick="window.volunteerApp.copyLineSummary()">📋 คัดลอกข้อความสรุปส่ง LINE OA</button>
+    </div>
+
+    <div id="monthlyAwardBox" class="monthly-box">
+      <div class="monthly-badge">🏅 รางวัลพิเศษประจำเดือน · ประกาศคู่กับ LINE OA</div>
+      <div id="monthlyWinnerName" class="monthly-title">ยังไม่มีผู้ทำกิจกรรมในระบบ</div>
+      <div id="monthlyWinnerDetail" class="monthly-sub">
+        ผู้ทำกิจกรรมและได้แต้มสะสมสูงสุดประจำเดือนจะได้รับเกียรติบัตรหรือของรางวัลพิเศษเพิ่มเติมจากการรับน้ำฟรีทุก 10 แต้ม
+      </div>
+    </div>
+
+    <div id="leaderboardList" class="rank-list">
+      <div class="empty">พิมพ์ชื่อและกดปั๊มแต้มเพื่อดูอันดับผู้ทำกิจกรรมสูงสุด</div>
+    </div>
+  </div>
+
+  <!-- บัตรสะสมแต้มแบบกดปั๊มได้ทันทีรายบุคคล -->
+  <div class="card">
+    <div class="topbar">
+      <h2>🎫 บัตรสะสมแต้มกิจกรรมจิตอาสา (ปั๊มได้ไม่จำกัด · ครบ 10 แต้ม รับน้ำฟรี 1 แก้ว)</h2>
+      <span class="badge" id="countBadge">0 บัตร</span>
+    </div>
+
+    <div class="toolbar">
+      <input id="searchInput" placeholder="ค้นหาชื่อ กิจกรรม ฉายา หรือหมายเหตุ..." oninput="window.volunteerApp.renderAll()">
+      <div class="export-group">
+        <select id="exportActivitySelect">
+          <option value="__ALL__">ทุกกิจกรรม (0)</option>
+        </select>
+        <button type="button" class="btn-export" onclick="window.volunteerApp.exportCSV()">📥 โหลดไฟล์ CSV</button>
+      </div>
+    </div>
+
+    <div id="stampCardsGrid" class="cards-grid">
+      <div class="empty" style="grid-column:1/-1;">ยังไม่มีบัตรสะสมแต้ม กรอกชื่อด้านบนแล้วกด "ปั๊มแต้มลงบัตรทันที" ได้เลย</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  const STORAGE_KEY = "kpp_juvenile_unlimited_stamp_v3";
+  const SHEET_URL_KEY = "kpp_juvenile_volunteer_sheet_url";
+
+  let memoryFallback = [];
+  let records = loadRecords();
+  let sheetUrl = "";
+  try {
+    sheetUrl = localStorage.getItem(SHEET_URL_KEY) || "";
+  } catch (e) {}
+
+  function loadRecords() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      return memoryFallback;
+    }
+  }
+
+  function saveRecords() {
+    memoryFallback = records;
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+    } catch (e) {}
+  }
+
+  function escapeHTML(str) {
+    return String(str || "").replace(/[&<>"']/g, function (m) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m];
+    });
+  }
+
+  function getVolunteerTitle(pts) {
+    const p = Number(pts) || 0;
+    if (p >= 10) return { label: "ฮีโร่จิตอาสา", cls: "hero" };
+    if (p >= 5) return { label: "นักสะสมแต้มตัวจริง", cls: "pro" };
+    return { label: "มือใหม่จิตอาสา", cls: "" };
+  }
+
+  function getDrinkInfo(record) {
+    const pts = Number(record.points) || 0;
+    const earnedDrinks = Math.floor(pts / 10);
+    const redeemedDrinks = Math.max(0, Number(record.redeemedDrinks) || 0);
+    const availableDrinks = Math.max(0, earnedDrinks - redeemedDrinks);
+    const mod10 = pts % 10;
+    const missingToNext = mod10 === 0 ? 10 : (10 - mod10);
+    const progressPct = mod10 === 0 && pts > 0 ? 100 : (mod10 * 10);
+
+    return {
+      pts: pts,
+      earnedDrinks: earnedDrinks,
+      redeemedDrinks: redeemedDrinks,
+      availableDrinks: availableDrinks,
+      missingToNext: missingToNext,
+      progressPct: progressPct
+    };
+  }
+
+  function updateSyncStatus(msg) {
+    const el = document.getElementById("syncStatusText");
+    if (!el) return;
+    if (msg) {
+      el.innerHTML = msg;
+      return;
+    }
+    el.innerHTML = sheetUrl
+      ? "โหมดปัจจุบัน: <strong>เชื่อม Google Sheets แล้ว</strong>"
+      : "โหมดปัจจุบัน: <strong>บันทึกในเครื่องนี้</strong> (กดตั้งค่าเพื่อเชื่อม Google Sheets)";
+  }
+
+  async function pushToSheet(action, payload) {
+    if (!sheetUrl) return;
+    try {
+      await fetch(sheetUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ action: action, payload: payload })
+      });
+    } catch (err) {}
+  }
+
+  async function syncFromSheet() {
+    if (!sheetUrl) {
+      renderAll();
+      updateSyncStatus("รีเฟรชข้อมูลในเครื่องเรียบร้อยแล้ว");
+      return;
+    }
+    updateSyncStatus("กำลังดึงข้อมูลจาก Google Sheets...");
+    try {
+      const res = await fetch(sheetUrl + "?action=list");
+      const data = await res.json();
+      if (Array.isArray(data.records)) {
+        records = data.records;
+        saveRecords();
+        renderAll();
+        updateSyncStatus("ซิงก์ข้อมูลจาก Google Sheets สำเร็จแล้ว");
+        return;
+      }
+    } catch (err) {}
+    renderAll();
+    updateSyncStatus("เชื่อม Google Sheets แล้ว (แสดงข้อมูลล่าสุดในเครื่อง)");
+  }
+
+  function configureSheetUrl() {
+    const input = prompt("วางลิงก์ Google Apps Script Web App URL (ที่ลงท้ายด้วย /exec):", sheetUrl);
+    if (input === null) return;
+    sheetUrl = input.trim();
+    try {
+      localStorage.setItem(SHEET_URL_KEY, sheetUrl);
+    } catch (e) {}
+    updateSyncStatus();
+    if (sheetUrl) syncFromSheet();
+  }
+
+  function stampByName(rawName, rawActivity, rawPoints, rawNote) {
+    const name = String(rawName || "").trim();
+    if (!name) {
+      alert("กรุณากรอกชื่อ-นามสกุลก่อนปั๊มแต้มครับ");
+      const nameInput = document.getElementById("quickNameInput");
+      if (nameInput) nameInput.focus();
+      return;
+    }
+
+    const lastActivity = (records[0] && records[0].activity) ? records[0].activity : "กิจกรรมจิตอาสา";
+    const activity = String(rawActivity || "").trim() || lastActivity;
+    const ptsNum = Number(rawPoints);
+    const pts = (Number.isFinite(ptsNum) && ptsNum >= 1) ? Math.floor(ptsNum) : 1;
+    const note = String(rawNote || "").trim();
+
+    let person = records.find(function (r) {
+      return String(r.name || "").trim().toLowerCase() === name.toLowerCase();
+    });
+
+    if (person) {
+      person.points = (Number(person.points) || 0) + pts;
+      person.activity = activity;
+      if (note) person.note = note;
+      person.time = new Date().toLocaleString("th-TH");
+      saveRecords();
+      pushToSheet("stamp", { id: person.id, activity: person.activity, points: pts, totalPoints: person.points });
+    } else {
+      person = {
+        id: Date.now() + Math.floor(Math.random() * 1000),
+        name: name,
+        activity: activity,
+        note: note,
+        points: pts,
+        redeemedDrinks: 0,
+        time: new Date().toLocaleString("th-TH")
+      };
+      records.unshift(person);
+      saveRecords();
+      pushToSheet("checkIn", person);
+    }
+
+    renderAll();
+
+    const info = getDrinkInfo(person);
+    const banner = document.getElementById("stampBanner");
+    if (banner) {
+      banner.classList.remove("hidden");
+      banner.innerHTML =
+        "🎫 ปั๊มแต้มให้ \"" + escapeHTML(person.name) + "\" +" + pts + " แต้มแล้ว — รวม " + person.points + " แต้ม (" + getVolunteerTitle(person.points).label + ") · สิทธิ์น้ำฟรีคงเหลือ " + info.availableDrinks + " แก้ว";
+    }
+  }
+
+  function handleQuickStamp() {
+    const nameEl = document.getElementById("quickNameInput");
+    const actEl = document.getElementById("quickActivityInput");
+    const ptsEl = document.getElementById("quickPointsInput");
+    const noteEl = document.getElementById("quickNoteInput");
+
+    stampByName(nameEl.value, actEl.value, ptsEl.value, noteEl.value);
+    nameEl.value = "";
+    noteEl.value = "";
+    nameEl.focus();
+  }
+
+  function stampCardById(id) {
+    const person = records.find(function (r) { return Number(r.id) === Number(id); });
+    if (!person) return;
+    const actInput = document.getElementById("quickActivityInput").value.trim();
+    const ptsInput = Number(document.getElementById("quickPointsInput").value);
+    const pts = (Number.isFinite(ptsInput) && ptsInput >= 1) ? Math.floor(ptsInput) : 1;
+    stampByName(person.name, actInput || person.activity, pts, person.note);
+  }
+
+  function redeemDrinkById(id) {
+    const person = records.find(function (r) { return Number(r.id) === Number(id); });
+    if (!person) return;
+    const info = getDrinkInfo(person);
+    if (info.availableDrinks <= 0) {
+      alert("ยังไม่มีสิทธิ์น้ำฟรีคงเหลือสำหรับแลกครับ");
+      return;
+    }
+    person.redeemedDrinks = info.redeemedDrinks + 1;
+    saveRecords();
+    renderAll();
+
+    const banner = document.getElementById("stampBanner");
+    if (banner) {
+      banner.classList.remove("hidden");
+      banner.innerHTML =
+        "🥤 บันทึกแลกน้ำฟรี 1 แก้วให้ \"" + escapeHTML(person.name) + "\" แล้ว (แลกไปแล้วทั้งหมด " + person.redeemedDrinks + " แก้ว · คงเหลืออีก " + (info.availableDrinks - 1) + " แก้ว)";
+    }
+  }
+
+  function deleteRecord(id) {
+    if (!confirm("ต้องการลบบัตรรายชื่อนี้ใช่ไหม?")) return;
+    records = records.filter(function (r) { return Number(r.id) !== Number(id); });
+    saveRecords();
+    pushToSheet("delete", { id: id });
+    renderAll();
+  }
+
+  function getSortedByPoints() {
+    return records.slice().sort(function (a, b) {
+      const diff = (Number(b.points) || 0) - (Number(a.points) || 0);
+      if (diff !== 0) return diff;
+      return (Number(a.id) || 0) - (Number(b.id) || 0);
+    });
+  }
+
+  function renderLeaderboard() {
+    const monthlyNameEl = document.getElementById("monthlyWinnerName");
+    const monthlyDetailEl = document.getElementById("monthlyWinnerDetail");
+    const listEl = document.getElementById("leaderboardList");
+    const sorted = getSortedByPoints();
+
+    if (!sorted.length) {
+      monthlyNameEl.textContent = "ยังไม่มีผู้ทำกิจกรรมในระบบ";
+      monthlyDetailEl.textContent = "ผู้ทำกิจกรรมและได้แต้มสะสมสูงสุดประจำเดือนจะได้รับเกียรติบัตรหรือของรางวัลพิเศษเพิ่มเติมจากการรับน้ำฟรีทุก 10 แต้ม";
+      listEl.innerHTML = '<div class="empty">พิมพ์ชื่อและกดปั๊มแต้มเพื่อดูอันดับผู้ทำกิจกรรมสูงสุด</div>';
+      return;
+    }
+
+    const top1 = sorted[0];
+    const top1Pts = Number(top1.points) || 0;
+    const top1Title = getVolunteerTitle(top1Pts).label;
+
+    monthlyNameEl.innerHTML =
+      "🥇 ผู้ทำแต้มสูงสุดประจำเดือน: " + escapeHTML(top1.name) + " (" + top1Pts + " แต้ม · " + escapeHTML(top1Title) + ")";
+    monthlyDetailEl.innerHTML =
+      "รางวัลพิเศษประจำเดือน: เกียรติบัตรจิตอาสาดีเด่น / ของรางวัลพิเศษประจำเดือน (ประกาศสรุปผลคู่กับ LINE OA) · กิจกรรมล่าสุด: " + escapeHTML(top1.activity);
+
+    listEl.innerHTML = sorted.slice(0, 10).map(function (r, idx) {
+      const pts = Number(r.points) || 0;
+      const titleObj = getVolunteerTitle(pts);
+      const info = getDrinkInfo(r);
+      const rankClass = idx < 3 ? " rank-" + (idx + 1) : "";
+
+      return (
+        '<div class="rank-item' + rankClass + '">' +
+          "<div>" +
+            '<span class="rank-badge">อันดับ ' + (idx + 1) + "</span> " +
+            '<strong style="margin-left:6px;">' + escapeHTML(r.name) + "</strong>" +
+            '<span class="title-tag ' + titleObj.cls + '">' + escapeHTML(titleObj.label) + "</span>" +
+            '<div style="font-size:12px; color:#5a789a; margin-top:3px;">กิจกรรมล่าสุด: ' + escapeHTML(r.activity) + " · แลกน้ำฟรีแล้ว " + info.redeemedDrinks + " แก้ว (รอแลก " + info.availableDrinks + " แก้ว)</div>" +
+          "</div>" +
+          '<div style="text-align:right; white-space:nowrap;">' +
+            '<span class="pts-pill">⭐ ' + pts + " แต้ม</span>" +
+          "</div>" +
+        "</div>"
+      );
+    }).join("");
+  }
+
+  function renderStampCards() {
+    const datalist = document.getElementById("existingNamesList");
+    datalist.innerHTML = records.map(function (r) {
+      return '<option value="' + escapeHTML(r.name) + '"></option>';
+    }).join("");
+
+    const actSelect = document.getElementById("exportActivitySelect");
+    const prevAct = actSelect.value;
+    const activities = Array.from(new Set(records.map(function (r) { return r.activity; }).filter(Boolean)));
+    actSelect.innerHTML = '<option value="__ALL__">ทุกกิจกรรม (' + records.length + ")</option>";
+    activities.forEach(function (act) {
+      const count = records.filter(function (r) { return r.activity === act; }).length;
+      const opt = document.createElement("option");
+      opt.value = act;
+      opt.textContent = act + " (" + count + ")";
+      actSelect.appendChild(opt);
+    });
+    if (prevAct === "__ALL__" || activities.indexOf(prevAct) !== -1) {
+      actSelect.value = prevAct;
+    }
+
+    const q = document.getElementById("searchInput").value.trim().toLowerCase();
+    const filtered = records.filter(function (r) {
+      const titleLabel = getVolunteerTitle(r.points).label.toLowerCase();
+      return String(r.name || "").toLowerCase().indexOf(q) !== -1 ||
+             String(r.activity || "").toLowerCase().indexOf(q) !== -1 ||
+             String(r.note || "").toLowerCase().indexOf(q) !== -1 ||
+             titleLabel.indexOf(q) !== -1;
+    });
+
+    document.getElementById("countBadge").innerText = filtered.length + " บัตร";
+
+    const grid = document.getElementById("stampCardsGrid");
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="empty" style="grid-column:1/-1;">ยังไม่มีบัตรสะสมแต้ม กรอกชื่อด้านบนแล้วกด "ปั๊มแต้มลงบัตรทันที" ได้เลย</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(function (r) {
+      const pts = Number(r.points) || 0;
+      const titleObj = getVolunteerTitle(pts);
+      const info = getDrinkInfo(r);
+      const activeInCurrentCard = pts % 10 === 0 && pts > 0 ? 10 : (pts % 10);
+
+      let slotsHtml = "";
+      for (let s = 1; s <= 10; s++) {
+        const isStamped = s <= activeInCurrentCard;
+        slotsHtml +=
+          '<div class="stamp-slot' + (isStamped ? " stamped" : "") + '">' +
+            (isStamped ? "✓" : s) +
+          "</div>";
+      }
+
+      const distanceText = info.availableDrinks > 0
+        ? "พร้อมรับน้ำฟรี " + info.availableDrinks + " แก้ว!"
+        : "ขาดอีก " + info.missingToNext + " แต้ม รับน้ำฟรี 1 แก้ว";
+
+      return (
+        '<div class="volunteer-stamp-card">' +
+          '<div class="card-top">' +
+            "<div>" +
+              '<div class="card-name">' + escapeHTML(r.name) + ' <span class="title-tag ' + titleObj.cls + '">' + escapeHTML(titleObj.label) + "</span></div>" +
+              '<div class="card-meta">กิจกรรม: ' + escapeHTML(r.activity) + "</div>" +
+              '<div class="card-meta">' + escapeHTML(r.note || "ไม่มีหมายเหตุ") + " · " + escapeHTML(r.time) + "</div>" +
+            "</div>" +
+            '<span class="pts-pill">⭐ ' + pts + " แต้ม</span>" +
+          "</div>" +
+
+          '<div class="progress-wrap">' +
+            '<div class="progress-label">' +
+              "<span>ระยะทางรับน้ำฟรี (รอบ 10 แต้ม)</span>" +
+              "<span>" + escapeHTML(distanceText) + "</span>" +
+            "</div>" +
+            '<div class="progress-track">' +
+              '<div class="progress-fill" style="width:' + info.progressPct + '%;"></div>' +
+            "</div>" +
+          "</div>" +
+
+          '<div class="drink-status">' +
+            "🥤 ได้รับสิทธิ์ทั้งหมด " + info.earnedDrinks + " แก้ว · แลกไปแล้ว " + info.redeemedDrinks + " แก้ว · คงเหลือ " + info.availableDrinks + " แก้ว" +
+          "</div>" +
+
+          '<div class="slots-row">' + slotsHtml + "</div>" +
+
+          '<div class="card-actions">' +
+            "<div>" +
+              '<button type="button" class="btn-mini-stamp" onclick="window.volunteerApp.stampCardById(' + r.id + ')">+ปั๊มแต้ม</button>' +
+              '<button type="button" class="btn-redeem" onclick="window.volunteerApp.redeemDrinkById(' + r.id + ')"' + (info.availableDrinks <= 0 ? " disabled" : "") + '>🥤 แลกน้ำฟรีแล้ว</button>' +
+            "</div>" +
+            '<button type="button" class="btn-delete" onclick="window.volunteerApp.deleteRecord(' + r.id + ')">ลบ</button>' +
+          "</div>" +
+        "</div>"
+      );
+    }).join("");
+  }
+
+  function renderAll() {
+    renderStampCards();
+    renderLeaderboard();
+  }
+
+  function copyLineSummary() {
+    const sorted = getSortedByPoints();
+    if (!sorted.length) {
+      alert("ยังไม่มีข้อมูลสำหรับสรุปส่ง LINE OA ครับ");
+      return;
+    }
+
+    const top1 = sorted[0];
+    const lines = [
+      "🏆 สรุปผลผู้ทำกิจกรรมและรางวัลพิเศษประจำเดือน",
+      "สถานพินิจและคุ้มครองเด็กและเยาวชนจังหวัดกำแพงเพชร",
+      "🏅 รางวัลพิเศษประจำเดือน: " + top1.name + " (" + (Number(top1.points) || 0) + " แต้ม)",
+      "🥤 กติกา: ครบ 10 แต้ม รับน้ำฟรี 1 แก้ว",
+      "------------------------------"
+    ];
+
+    sorted.slice(0, 10).forEach(function (r, i) {
+      const pts = Number(r.points) || 0;
+      const titleLabel = getVolunteerTitle(pts).label;
+      const info = getDrinkInfo(r);
+      lines.push((i + 1) + ". " + r.name + " [" + titleLabel + "] : " + pts + " แต้ม (แลกน้ำแล้ว " + info.redeemedDrinks + " แก้ว)");
+    });
+
+    const text = lines.join("\n");
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        alert("คัดลอกข้อความสรุปผลสำหรับส่ง LINE OA แล้วครับ");
+      }).catch(function () {
+        prompt("คัดลอกข้อความสรุปผลด้านล่าง:", text);
+      });
+    } else {
+      prompt("คัดลอกข้อความสรุปผลด้านล่าง:", text);
+    }
+  }
+
+  function exportCSV() {
+    if (!records.length) {
+      alert("ยังไม่มีข้อมูลสำหรับส่งออก");
+      return;
+    }
+    const selectedActivity = document.getElementById("exportActivitySelect").value || "__ALL__";
+    const targetRecords = selectedActivity === "__ALL__"
+      ? records
+      : records.filter(function (r) { return r.activity === selectedActivity; });
+
+    if (!targetRecords.length) {
+      alert("ไม่พบข้อมูลของกิจกรรมที่เลือก");
+      return;
+    }
+
+    const rows = [
+      ["หน่วยงาน", "สถานพินิจและคุ้มครองเด็กและเยาวชนจังหวัดกำแพงเพชร"],
+      ["ลำดับ", "ชื่อ-นามสกุล", "ป้ายยศ", "กิจกรรม", "หมายเหตุ", "แต้มสะสม", "สิทธิ์น้ำฟรีทั้งหมด", "แลกน้ำไปแล้ว", "น้ำฟรีคงเหลือ", "เวลาที่บันทึก"]
+    ].concat(
+      targetRecords.slice().reverse().map(function (r, i) {
+        const info = getDrinkInfo(r);
+        return [
+          i + 1,
+          r.name,
+          getVolunteerTitle(info.pts).label,
+          r.activity,
+          r.note,
+          info.pts,
+          info.earnedDrinks,
+          info.redeemedDrinks,
+          info.availableDrinks,
+          r.time
+        ];
+      })
+    );
+
+    const csvContent = "\uFEFF" + rows.map(function (row) {
+      return row.map(function (cell) {
+        return '"' + String(cell || "").replace(/"/g, '""') + '"';
+      }).join(",");
+    }).join("\n");
+
+    const safeName = selectedActivity === "__ALL__"
+      ? "ทุกกิจกรรม"
+      : selectedActivity.replace(/[\\/:*?"<>|]/g, "_");
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "บัตรสะสมแต้มจิตอาสา_สถานพินิจฯกำแพงเพชร_" + safeName + "_" + new Date().toISOString().slice(0, 10) + ".csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  window.volunteerApp = {
+    handleQuickStamp: handleQuickStamp,
+    stampCardById: stampCardById,
+    redeemDrinkById: redeemDrinkById,
+    deleteRecord: deleteRecord,
+    configureSheetUrl: configureSheetUrl,
+    syncFromSheet: syncFromSheet,
+    copyLineSummary: copyLineSummary,
+    exportCSV: exportCSV,
+    renderAll: renderAll
+  };
+
+  updateSyncStatus();
+  renderAll();
+  if (sheetUrl) syncFromSheet();
+})();
+</script>
+</body>
+</html>
